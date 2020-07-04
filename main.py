@@ -60,7 +60,7 @@ def add_category2(x):
         return "others"
 
 restaurant_categories = ["和食", "韓国料理", "中華", "イタリアン", "カフェ", "居酒屋", "ほか"]
-img_restaurant_default = url_for('static', filename='restaurants_default.png')
+img_restaurant_default = "./static/restaurants_default.png"
 #"https://curry-jinbo-linebot.an.r.appspot.com/static/restaurants_default" #何もurlなかった時用のデフォルト画像。
 # img_restaurant_default = "https://portfolio-masaki.appspot.com/_nuxt/img/bdede36.png"
 
