@@ -103,10 +103,6 @@ restaurant_names = df_restaurant["name"].values.tolist()
 app = Flask(__name__)
 line_bot_api = LineBotApi(YOUR_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(YOUR_CHANNEL_SECRET)
-
-conn = psycopg2.connect("postgresql://{}:{}@{}:{}/{}".format(user, password, host, port_db, database))
-insert_initial_data(conn, TEST_USER_ID_AOS)
-conn.close()
 # ----- main -----
 
 @app.route("/")
