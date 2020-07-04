@@ -37,51 +37,6 @@ class Restaurant:
         self.user_distance=user_distance
         self.category2 = category2
 
-def insert_initial_data(conn, TEST_UESR_ID_AOS):
-    # conn = psycopg2.connect("postgresql://{}:{}@{}:{}/{}".format(user, password, host, port_db, database))
-    cur = conn.cursor()
-
-    cur.execute("DROP TABLE IF EXISTS favorite_restaurants")
-    cur.execute('''CREATE TABLE favorite_restaurants
-                (user_id text, favorite_restaurant_name text)''')
-
-    cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', '韓花')".format(TEST_USER_ID_AOS))
-    cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', 'ぱいかじ 新宿新南口店')".format(TEST_USER_ID_AOS))
-    cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', 'ベーカリー＆レストラン 沢村')".format(TEST_USER_ID_AOS))
-
-    TEST_USER_ID1 = "sample1"
-    TEST_USER_ID2 = "sample2"
-    TEST_USER_ID3 = "sample3"
-    TEST_USER_ID4 = "sample4"
-    TEST_USER_ID5 = "sample5"
-    cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', '韓花')".format(TEST_USER_ID1))
-    cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', '韓花')".format(TEST_USER_ID2))
-    cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', '韓花')".format(TEST_USER_ID3))
-    cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', '韓花')".format(TEST_USER_ID4))
-    cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', '韓花')".format(TEST_USER_ID5))
-    cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', 'ぱいかじ 新宿新南口店')".format(TEST_USER_ID1))
-    cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', 'ぱいかじ 新宿新南口店')".format(TEST_USER_ID2))
-    cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', 'ぱいかじ 新宿新南口店')".format(TEST_USER_ID3))
-    cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', 'ぱいかじ 新宿新南口店')".format(TEST_USER_ID4))
-    cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', 'GARDEN HOUSE SHINJUKU')".format(TEST_USER_ID1))
-    cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', 'GARDEN HOUSE SHINJUKU')".format(TEST_USER_ID2))
-    cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', 'GARDEN HOUSE SHINJUKU')".format(TEST_USER_ID3))
-    cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', 'サンマルクカフェ 新宿新南口店')".format(TEST_USER_ID1))
-    cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', 'サンマルクカフェ 新宿新南口店')".format(TEST_USER_ID2))
-    cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', 'ROSEMARY’S TOKYO')".format(TEST_USER_ID1))
-    cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', 'COBI COFFEE box')".format(TEST_USER_ID1))
-    cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', 'ブルーボトルコーヒー 新宿')".format(TEST_USER_ID1))
-    cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', 'ＯＴＴＩＭＯ Ｓｅａｆｏｏｄ ｇａｒｄｅｎ')".format(TEST_USER_ID1))
-    cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', 'GARDEN HOUSE SHINJUKU')".format(TEST_USER_ID1))
-    cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', 'サンマルクカフェ 新宿新南口店')".format(TEST_USER_ID2))
-    cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', 'サンマルクカフェ 新宿新南口店')".format(TEST_USER_ID3))
-
-    df_tmp = pd.read_sql("SELECT * FROM favorite_restaurants", con=conn)
-    # print("初期データ")
-    # print(df_tmp)
-    conn.commit() # Save (commit) the changes
-    cur.close()
-    # conn.close()
 
 # 東京周辺では緯度1度で110kmくらい、経度1度で90kmくらいなので、そう仮定して簡略的に計算する。
 def calc_distance(x, latitude_base, longitude_base):
