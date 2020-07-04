@@ -61,10 +61,7 @@ def add_category2(x):
 
 restaurant_categories = ["和食", "韓国料理", "中華", "イタリアン", "カフェ", "居酒屋", "ほか"]
 img_restaurant_default = "https://curry-jinbo-linebot.an.r.appspot.com/static/restaurants_default" #何もurlなかった時用のデフォルト画像。
-# img_restaurant_default = "https://via.placeholder.com/200x100"
-# img_restaurant_default = "https://portfolio-masaki.appspot.com/_nuxt/img/49805a7.png"
-# img_restaurant_default = "https://XXXXXXX.ngrok.io/static/restaurants_default.png"
-img_restaurant_default = "https://portfolio-masaki.appspot.com/_nuxt/img/bdede36.png"
+# img_restaurant_default = "https://portfolio-masaki.appspot.com/_nuxt/img/bdede36.png"
 
 
 # set environment variables
@@ -82,7 +79,6 @@ port_db = os.environ["port_db"]
 database = os.environ["database"]
 # https://developers.line.biz/の設定, https://curry-jinbo-linebot.an.r.appspot.com/callback
 
-print("333")
 conn = psycopg2.connect("postgresql://{}:{}@{}:{}/{}".format(user, password, host, port_db, database))
 cur = conn.cursor()
 df_restaurant = pd.read_sql("SELECT * FROM restaurants", con=conn)
