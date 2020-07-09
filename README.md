@@ -9,3 +9,5 @@
 - see favorites rankings of all users
 - see favorite rankigns separeted by genres
 - see a recommend restaurant (currently no logic is implemented)
+
+It takes about 15 seconds to activate this account since this acccount is deployed with heroku free plan.
