@@ -1,6 +1,6 @@
 # line-bot-lunch2
-
-- line.me/r/ti/p/@097dkanl
+- https://lin.ee/d5mCfCz
+- <a href="https://lin.ee/d5mCfCz"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0"></a>
 
 ## features
 - pick up a restaurant randomly from your favorites 
