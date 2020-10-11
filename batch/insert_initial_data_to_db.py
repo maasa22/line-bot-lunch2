@@ -78,11 +78,6 @@ insert_votes(2, 'とんかつ とん匠')
 insert_votes(2, '名代とんかつ かつくら 新宿高島屋店')
 insert_votes(2, '築地玉寿司 新宿高島屋店')
 
-
-# cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', 'ROSEMARY’S TOKYO')".format(TEST_USER_ID1))
-# cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', 'COBI COFFEE box')".format(TEST_USER_ID1))
-# cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', 'ＯＴＴＩＭＯ Ｓｅａｆｏｏｄ ｇａｒｄｅｎ')".format(TEST_USER_ID1))
-# cur.execute("INSERT INTO favorite_restaurants VALUES ('{}', 'GARDEN HOUSE SHINJUKU')".format(TEST_USER_ID1))
 conn.commit() # Save (commit) the changes
 cur.close()
 conn.close()
